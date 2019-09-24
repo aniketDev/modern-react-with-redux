@@ -1,9 +1,18 @@
-// Import React and ReactDOM packages
 import React from "react";
 import ReactDOM from "react-dom";
 
-// Create a react component
+function getbuttonText() {
+  return "Click on me!";
+}
+
+function getTime() {
+  return new Date().toLocaleDateString();
+}
 const App = function() {
+  // const buttonText = "Click me!";
+  // const buttonText = ["Click", "me"];
+  const buttonText = { text: "Click me" };
+  // const style = { backgroundColor: "blue", color: "white" };
   return (
     <div>
       <label className="label" htmlFor="name">
@@ -11,13 +20,14 @@ const App = function() {
       </label>
       <input id="name" type="text" />
       <button style={{ backgroundColor: "blue", color: "white" }}>
-        Submit
+        {/* or, <button style={style}> */}
+        {/* {buttonText} */}
+        {buttonText.text}
+        {/* {getbuttonText()} */}
       </button>
+      <h2>{getTime()}</h2>
     </div>
   );
 };
 
-// Take the react component and show it on the screen
-// ReactDOM.render(<App />, document.getElementById("root"));
-// or
 ReactDOM.render(<App />, document.querySelector("#root"));
