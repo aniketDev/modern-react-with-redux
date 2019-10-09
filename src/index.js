@@ -1,28 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import CommentDetail from "./CommentDetail";
 
 const App = function() {
+  const alignCenter = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexFlow: "column",
+    padding: "3rem"
+  };
+
   return (
-    <div className="ui comments">
-      <div className="comment">
-        <div className="avatar">
-          <img alt="avatar" src="/images/avatar/small/jenny.jpg" />
-        </div>
-        <div className="content">
-          <a href="/" className="author">
-            Jenny Hess
-          </a>
-          <div className="metadata">
-            <div>Just now</div>
-          </div>
-          <div className="text">Elliot you are always so right :)</div>
-          <div className="actions">
-            <a href="/" className="">
-              Reply
-            </a>
-          </div>
-        </div>
-      </div>
+    <div style={alignCenter} className="ui comments">
+      <CommentDetail />
+      <CommentDetail />
+      <CommentDetail />
+      <CommentDetail />
+      <CommentDetail />
     </div>
   );
 };
