@@ -4,6 +4,7 @@ import CommentDetail from "./CommentDetail";
 import faker from "faker";
 import ApprovalCard from "./ApprovalCard";
 import SeasonDisplay from "./SeasonApp/SeasonDisplay";
+import Spinner from "./Spinner";
 
 const App = function() {
   const alignCenter = {
@@ -79,7 +80,11 @@ class SeasonAppClass extends React.Component {
       return <SeasonDisplay lat={this.state.lat} />;
     }
 
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Spinner message=" Please accept location request" />
+      </div>
+    );
   }
 }
 
