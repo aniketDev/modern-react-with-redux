@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import CommentDetail from "./CommentDetail";
 import faker from "faker";
 import ApprovalCard from "./ApprovalCard";
+import SeasonDisplay from "./SeasonApp/SeasonDisplay";
 
 const App = function() {
   const alignCenter = {
@@ -75,7 +76,7 @@ class SeasonAppClass extends React.Component {
     }
 
     if (!this.state.errorMessage && this.state.lat) {
-      return <div>Latitude: {this.state.lat}</div>;
+      return <SeasonDisplay lat={this.state.lat} />;
     }
 
     return <div>Loading...</div>;
