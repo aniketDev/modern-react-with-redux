@@ -50,4 +50,20 @@ const SeasonApp = () => {
   return <div>Latitude: </div>;
 };
 
-ReactDOM.render(<SeasonApp />, document.querySelector("#root"));
+// Class component
+class SeasonAppClass extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { lat: null };
+  }
+
+  render() {
+    window.navigator.geolocation.getCurrentPosition(
+      position => console.log(position),
+      err => console.log(err)
+    );
+    return <div>Latitude: </div>;
+  }
+}
+
+ReactDOM.render(<SeasonAppClass />, document.querySelector("#root"));
