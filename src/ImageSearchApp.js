@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import SearchBar from "./Components/ImageSearch/SearchBar";
 import unsplash from "./Api/unsplash";
 
