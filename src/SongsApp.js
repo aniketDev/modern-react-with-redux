@@ -1,9 +1,7 @@
 import React from "react";
 
-class SongsApp extends React.Component {
-  render() {
-    return <div>SongsApp</div>;
-  }
-}
+const SongsApp = () => {
+  return <div>SongsApp</div>;
+};
 
 export default SongsApp;
