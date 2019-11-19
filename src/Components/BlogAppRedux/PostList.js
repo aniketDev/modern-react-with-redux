@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { fetchPosts } from "../../Actions/BlogAppActions";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchPosts } from '../../Actions/BlogAppActions';
 
 class PostList extends Component {
   componentDidMount() {
@@ -13,10 +13,8 @@ class PostList extends Component {
         <div className="item" key={post.id}>
           <i className="large middle aligned icon user" />
           <div className="content">
-            <div className="description">
-              <h2>{post.title}</h2>
-              <p>{post.body}</p>
-            </div>
+            <div className="header">{post.title}</div>
+            <p className="description">{post.body}</p>
           </div>
         </div>
       );
@@ -24,9 +22,7 @@ class PostList extends Component {
   }
 
   render() {
-    return (
-      <div className="ui relaxed divided post list">{this.renderList()}</div>
-    );
+    return <div className="ui relaxed divided list">{this.renderList()}</div>;
   }
 }
 
@@ -34,4 +30,7 @@ const mapStateToProps = state => {
   return { posts: state.posts };
 };
 
-export default connect(mapStateToProps, { fetchPosts: fetchPosts })(PostList);
+export default connect(
+  mapStateToProps,
+  { fetchPosts: fetchPosts }
+)(PostList);
