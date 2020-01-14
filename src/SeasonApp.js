@@ -1,21 +1,10 @@
 import React, { useState, useEffect } from "react";
 import SeasonDisplay from "./Components/SeasonApp/SeasonDisplay";
 import Spinner from "./Components/Spinner/Spinner";
+import useLocation from './Components/SeasonApp/useLocation';
 
 const SeasonApp = () => {
-  const [lat, setLat] = useState(null);
-  const [errorMessage, setErrorMessage] = useState("");
-
-  useEffect(() => {
-    window.navigator.geolocation.getCurrentPosition(
-      position => {
-        setLat(position.coords.latitude);
-      },
-      err => {
-        setErrorMessage(err.message);
-      }
-    );
-  }, []);
+  const [lat, errorMessage] = useLocation();
 
   let content;
   if (errorMessage) {
