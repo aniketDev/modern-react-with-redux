@@ -4,12 +4,6 @@ import axios from 'axios';
 const ResourceListHooks = ({ resource }) => {
   const [resources, setResources] = useState([]);
 
-  const fetchResource = async (resource) => {
-    const response = await axios.get(`https://jsonplaceholder.typicode.com/${resource}`);
-
-    setResources(response.data);
-  };
-
   useEffect(() => {
     (async (resource) => {
       const response = await axios.get(`https://jsonplaceholder.typicode.com/${resource}`);
@@ -22,7 +16,7 @@ const ResourceListHooks = ({ resource }) => {
     <div>
       <ul>
         {resources.map(data => (
-          <li>{data.title}</li>
+          <li key={data.id}>{data.title}</li>
         ))}
       </ul>
     </div>
