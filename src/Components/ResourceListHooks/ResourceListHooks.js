@@ -11,7 +11,11 @@ const ResourceListHooks = ({ resource }) => {
   };
 
   useEffect(() => {
-    fetchResource(resource);
+    (async (resource) => {
+      const response = await axios.get(`https://jsonplaceholder.typicode.com/${resource}`);
+
+      setResources(response.data);
+    })(resource);
   }, [resource]);
 
   return (
