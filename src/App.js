@@ -10,7 +10,7 @@ import HooksApp from './HooksApp';
 const App = () => {
   return (
     <div>
-      <HooksApp />
+      <SeasonApp />
     </div>
   );
 };
