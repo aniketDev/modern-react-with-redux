@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const ResourceListHooks = ({ resource }) => {
+const useResources = (resource) => {
   const [resources, setResources] = useState([]);
 
   useEffect(() => {
@@ -11,6 +11,12 @@ const ResourceListHooks = ({ resource }) => {
       setResources(response.data);
     })(resource);
   }, [resource]);
+
+  return resources;
+}
+
+const ResourceListHooks = ({ resource }) => {
+  const resources = useResources(resource);
 
   return (
     <div>
